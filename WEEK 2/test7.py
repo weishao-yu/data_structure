@@ -1,36 +1,37 @@
+def collect_letters(T):
+    letter = []        
+    for i in range(T):
+        x = input().strip()
+        for String in x:
+            if String.isalpha():
+                letter.append(String.upper())
+    return letter
+
+def get_value(item):
+    char, count = item
+    return (-count, char)
+
+def sorted_letters(T):
+    c = {}
+    x = collect_letters(T)
+    for char in x:
+        if char in c:
+            c[char] += 1
+        else:
+            c[char] = 1
+    sorted_items = sorted(c.items(), key=get_value)
+    for key, value in sorted_items:
+        print(f"{key} {value}")
+
+
 while True:
     try:
-        # 讀取 n，若 n 不是數字則跳過
-        n = input().strip()
-        if not n.isdigit():
+        T = input().strip()
+        if not T:
             continue
-        n = int(n)
-
-        letter_count = {}
-
-        # 讀取 n 行文字
-        for _ in range(n):
-            line = input().strip()
-
-            for char in line:
-                if char.isalpha():  # 只處理英文字母
-                    char = char.upper()  # 統一轉成大寫
-                    letter_count[char] = letter_count.get(char, 0) + 1
-
-        # 定義排序函數
-        def sort_key(item):
-            char, count = item
-            return (-count, char)  # 次數降序，字母升序
-
-        # 排序: 先依次數降序，再依字母升序
-        sorted_letters = sorted(letter_count.items(), key=sort_key)
-
-        # 輸出結果
-        for letter, count in sorted_letters:
-            print(letter, count)
-
-        for i in range(n - 1):
-            print()
-
+        T = int(T)
+        sorted_letters(T)
+        print()
     except EOFError:
-        break  # 讀到檔案結尾 (EOF) 就停止
+        break
+
