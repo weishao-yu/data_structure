@@ -5,7 +5,7 @@ for _ in range(K):
     target = [input().strip() for _ in range(n)]
 
     result = []
-    idx = n - 1  # 從原始的最後開始往前比
+    idx = n - 1
 
     for i in range(n - 1, -1, -1):
         while idx >= 0 and original[idx] != target[i]:
@@ -14,6 +14,6 @@ for _ in range(K):
         if idx >= 0:
             idx -= 1
 
-    for name in (result):
+    for name in reversed(result):
         print(name)
     print()
