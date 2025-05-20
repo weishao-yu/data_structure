@@ -1,9 +1,13 @@
 T = int(input())
-
 for t in range(1, T + 1):
-    n = int(input())
-    matrix = [list(map(int, input().split())) for _ in range(n)]
-
+    line = input()
+    while line.strip() == "":
+        line = input()
+    n = int(line.split('=')[1]) if '=' in line else int(line)
+    matrix = []
+    for _ in range(n):
+        row = list(map(int, input().split()))
+        matrix.append(row)
     symmetric = True
     for i in range(n):
         for j in range(n):
@@ -12,6 +16,4 @@ for t in range(1, T + 1):
                 break
         if not symmetric:
             break
-
-    result = "Symmetric" if symmetric else "Non-symmetric"
-    print(f"Test #{t}: {result}")
+    print(f"Test #{t}: {'Symmetric.' if symmetric else 'Non-symmetric.'}")
