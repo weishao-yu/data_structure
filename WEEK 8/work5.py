@@ -14,6 +14,11 @@ for _ in range(K):
         if idx >= 0:
             idx -= 1
 
-    for name in reversed(result):
-        print(name)
-    print()
+
+    num = len(result)
+    if num == 0:
+        print()
+    else:
+        for i in range(num - 1, -1, -1):
+            print(target[i])
+        print()
