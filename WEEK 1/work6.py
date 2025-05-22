@@ -1,14 +1,14 @@
-# PG
-count = 0  
+# PF
+T = int(input())
 
-while True:
-    try:
-        line = input().strip()
-        if line == "Hello World":
-            count += 1
-        else:
-            break
-    except EOFError:
-        break  
+for _ in range(T):
+    n = int(input())
+    names = []
+    for _ in range(n):
+        name = input()
+        names.append(name)
+    print("Hello " + ", ".join(names))
 
-print(f"Hello World * {count}")
+# The Python String join() method takes all items in iterable and joins them into one string. 
+# This method is helpful to generate strings from a list, tuples, and sets.
+
