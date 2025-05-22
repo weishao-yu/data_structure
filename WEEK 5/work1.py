@@ -28,12 +28,10 @@ while True:
                     sum_set.add(s)
                 if not is_b2_sequence:
                     break
-
-        print(f"Case #{test_case}: ", end="")
         if is_b2_sequence:
-            print("It is a B2-Sequence.")
+            print(f"Case #{test_case}: It is a B2-Sequence.")
         else:
-            print("It is not a B2-Sequence.")
+            print(f"Case #{test_case}: It is not a B2-Sequence.")
         print()
 
     except EOFError:

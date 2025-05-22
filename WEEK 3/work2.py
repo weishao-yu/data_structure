@@ -15,4 +15,4 @@ while True:
             print(result)
     except EOFError:
         break
-            
+ #這是 list 轉成以空格分隔的字串的標準寫法。
