@@ -23,6 +23,3 @@ while True:
 
     except EOFError:
         break
-    except Exception as e:
-        # 可選：print(f"輸入錯誤：{e}")
-        break
